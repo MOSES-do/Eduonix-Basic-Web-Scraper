@@ -1,0 +1,22 @@
+#!/bin/bash
+
+website=$1
+
+if [ ! -f "$website" ]; then
+	echo "Error: Input file '$website' not found"
+	exit 1
+fi
+
+count=1
+for url in $(cat "$website"); do
+#while IFS= read -r url; do	
+	fileName="webscraper.txt$count"
+	curl -s $url | grep -E "<h1>|<p>" | tr -d '<h1>|<p>' > $fileName
+
+	echo -e "\n"
+	echo -e "Web Scrap$count \n"
+	cat $fileName
+	((count++))
+
+#done < "$website"
+done
