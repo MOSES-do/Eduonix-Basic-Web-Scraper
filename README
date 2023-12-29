@@ -1,1 +1,5 @@
-Project 1 of the Eduonix E-Degree Linux Certification
+Linux Essentials -  Eduonix E-Degree Linux Certification project (Basic Web Scraper)
+
+Bash script is written in the webscraper file.
+weburl - contains the urls scraped
+webscraper.txt (1-3) contain the result of the web scrap.
